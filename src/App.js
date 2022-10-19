@@ -1,23 +1,27 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import User from './User'
 
 function App() {
+  const user = [
+    {name:"Abul", Email:"abc@gmail.com",Id:"253166"},
+    {name:"Rahul", Email:"rahul@gmail.com",Id:"253100"},
+    {name:"Prince", Email:"prince@gmail.com",Id:"253186"},
+    {name:"Guddu", Email:"guddu@gmail.com",Id:"253196"},
+    {name:"Razi", Email:"razi@gmail.com",Id:"253196",}
+  ]
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" >
+      <h1>Resuse Component with list</h1>
+      
+    {
+      user.map((item,i)=>
+      <User data={item}/>
+      )
+    }
+    
     </div>
   );
 }
